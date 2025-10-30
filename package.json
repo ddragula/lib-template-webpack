@@ -1,0 +1,51 @@
+{
+  "name": "lib-template-webpack",
+  "version": "0.1.0",
+  "description": "Template for creating frontend libraries bundled with webpack",
+  "license": "MIT",
+  "homepage": "https://github.com/ddragula/lib-template-webpack#readme",
+  "bugs": {
+    "url": "https://github.com/ddragula/lib-template-webpack/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddragula/lib-template-webpack.git"
+  },
+  "author": "Dawid Draguła",
+  "module": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./dist/lib-template-webpack.min.js"
+    }
+  },
+  "files": [
+    "lib/**/*",
+    "dist/**/*",
+    "styles/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "*.css",
+    "styles/*"
+  ],
+  "scripts": {
+    "clean": "rimraf dist lib",
+    "build:lib": "tsc -p tsconfig.json",
+    "build:cdn": "webpack --config webpack/cdn.config.js",
+    "build": "npm run clean && npm run build:lib && npm run build:cdn",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.4",
+    "rimraf": "^6.0.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
