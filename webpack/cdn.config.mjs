@@ -1,14 +1,18 @@
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default {
     mode: 'production',
 
     entry: {
-        'lib-template-webpack': path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'src', 'index.ts')
+        'lib-template-webpack': path.resolve(__dirname, '..', 'src', 'index.ts')
     },
 
     output: {
-        path: path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'dist'),
+        path: path.resolve(__dirname, '..', 'dist'),
         filename: (pathData) => `${pathData.chunk.name}.min.js`,
         library: {
             name: 'LibTemplateWebpack',
