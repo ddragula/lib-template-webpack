@@ -32,27 +32,27 @@ npm run build:cdn
 npm run build
 ```
 
-Webpack config for the CDN bundle is in `webpack/cdn.config.js`.
+Webpack config for the CDN bundle is in `webpack/cdn.config.mjs`.
 
 
 ## Outputs
 
-- **UMD (CDN):** `dist/lib-template-webpack.min.js` → global `LibTemplateWebpack`
+- **UMD (CDN):** `dist/lib-template-webpack.js` → global `LibTemplateWebpack`
 - **ESM:** `lib/index.js` (types: `lib/index.d.ts`)
 
 
 ## Styling
 
-Styles are provided in `styles/` and are not injected automatically. Include them yourself:
+Styles are not injected automatically. Include them yourself:
 
 - In plain HTML (CDN):
 ```html
-<link rel="stylesheet" href="./styles/lib-template-webpack.css" />
+<link rel="stylesheet" href="./dist/styles/lib-template-webpack.css" />
 ```
 
 - In ESM (via bundler):
 ```ts
-import 'lib-template-webpack/styles/lib-template-webpack.css';
+import 'lib-template-webpack/lib-template-webpack.css';
 ```
 
 The CSS uses the class prefix `ltw-` (see `prefix` in globals).
@@ -62,10 +62,10 @@ The CSS uses the class prefix `ltw-` (see `prefix` in globals).
 ### CDN (UMD)
 
 ```html
-<link rel="stylesheet" href="./styles/lib-template-webpack.css" />
+<link rel="stylesheet" href="./dist/styles/lib-template-webpack.css" />
 <div id="container"></div>
 
-<script src="./dist/lib-template-webpack.min.js"></script>
+<script src="./dist/lib-template-webpack.js"></script>
 <script>
   const { Button, Card, SampleCard, dom } = LibTemplateWebpack;
 
@@ -94,7 +94,7 @@ See working examples in `samples/`.
 
 ```ts
 import { Button, Card, SampleCard, dom } from 'lib-template-webpack';
-import 'lib-template-webpack/styles/lib-template-webpack.css';
+import 'lib-template-webpack/lib-template-webpack.css';
 
 const container = document.getElementById('container')!;
 

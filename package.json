@@ -13,14 +13,17 @@
   },
   "author": "Dawid Draguła",
   "type": "module",
-  "main": "./dist/lib-template-webpack.min.js",
+  "main": "./dist/lib-template-webpack.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
       "import": "./lib/index.js",
-      "require": "./dist/lib-template-webpack.min.js"
+      "require": "./dist/lib-template-webpack.js"
+    },
+    "./lib-template-webpack.css": {
+      "default": "./styles/index.css"
     }
   },
   "files": [
@@ -48,6 +51,7 @@
     "ts-loader": "^9.5.4",
     "typescript": "^5.9.3",
     "webpack": "^5.102.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-remove-empty-scripts": "^1.1.1"
   }
 }
