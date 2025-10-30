@@ -12,6 +12,8 @@
     "url": "git+https://github.com/ddragula/lib-template-webpack.git"
   },
   "author": "Dawid Draguła",
+  "type": "module",
+  "main": "./dist/lib-template-webpack.min.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -29,7 +31,7 @@
     "LICENSE"
   ],
   "sideEffects": [
-    "*.css",
+    "**/*.css",
     "styles/*"
   ],
   "scripts": {
