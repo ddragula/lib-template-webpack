@@ -1,15 +1,14 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from 'node:path';
 
-module.exports = {
+export default {
     mode: 'production',
 
     entry: {
-        'lib-template-webpack': path.resolve(__dirname, '..', 'src', 'index.ts')
+        'lib-template-webpack': path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'src', 'index.ts')
     },
 
     output: {
-        path: path.resolve(__dirname, '..', 'dist'),
+        path: path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'dist'),
         filename: (pathData) => `${pathData.chunk.name}.min.js`,
         library: {
             name: 'LibTemplateWebpack',
@@ -28,9 +27,7 @@ module.exports = {
             test: /\.ts$/,
             use: [{
                 loader: 'ts-loader',
-                options: {
-                    transpileOnly: true
-                }
+                options: { transpileOnly: true }
             }]
         }]
     }

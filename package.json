@@ -37,7 +37,7 @@
   "scripts": {
     "clean": "rimraf dist lib",
     "build:lib": "tsc -p tsconfig.json",
-    "build:cdn": "webpack --config webpack/cdn.config.js",
+    "build:cdn": "webpack --config webpack/cdn.config.mjs",
     "build": "npm run clean && npm run build:lib && npm run build:cdn",
     "prepublishOnly": "npm run build"
   },
