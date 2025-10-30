@@ -112,6 +112,6 @@ new SampleCard().add(container);
 ```
 
 
-### License
+## License
 
-MIT
+MIT License © 2025 Dawid Draguła. See the full text in `LICENSE`.
