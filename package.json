@@ -11,7 +11,19 @@
     "type": "git",
     "url": "git+https://github.com/ddragula/lib-template-webpack.git"
   },
-  "author": "Dawid Draguła",
+  "author": "Dawid Draguła <dawid.dragula@gmail.com>",
+  "keywords": [
+    "webpack",
+    "typescript",
+    "template",
+    "library",
+    "frontend",
+    "esm",
+    "umd",
+    "cdn",
+    "css",
+    "styles"
+  ],
   "type": "module",
   "main": "./dist/lib-template-webpack.js",
   "module": "./lib/index.js",
